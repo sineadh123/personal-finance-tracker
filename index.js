@@ -56,3 +56,52 @@ console.log(person.firname);
 console.log('Hello World');*/
 
 //start of document
+/* Set the width of the side navigation to 250px */
+
+//collapsible
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+document.getElementById("addTransaction").addEventListener("click", addTransactions);
+
+
+function loadTransactions(){
+    const transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+}
+
+function addTransactions(){
+    console.log("Hello world!");
+    const transactions = [{
+        type: "expense",
+        amount: 25,
+        category: "Food",
+        description: "Lunch",
+        date: "03/09"
+    }]
+    localStorage.setItem("transactions", JSON.stringify(transactions));
+    console.log(transactions);
+}
+
+function deleteTransaction(){
+
+}
+
+function calculateBalance(){
+
+}
+
+function renderTransactions(){
+
+}

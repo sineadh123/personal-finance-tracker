@@ -15,12 +15,33 @@
 
                 <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
         <div class="main">
-                <h1>Add a Transaction</h1>
+                        <button type="button" class="collapsible">Add a Transaction</button>
+                        <div class="content">
+                                <form>
+                                <p>Select transaction type:</p>
+                                <input type="radio" id="income" name="typeOfTransaction" value="Income">
+                                <label for="income">Income</label><br>
+                                <input type="radio" id="expense" name="typeOfTransaction" value="Expense">
+                                <label for="expense">Expense</label><br><br>
 
-                <h1>Edit a Transaction</h1>
+                                <label for="amount">Amount</label><br>
+                                <input type="text" id="amount" name="amount"><br>
+                                <label for="category">Category</label><br>
+                                <input type="text" id="category" name="category"><br>
+                                <label for="description">Description</label><br>
+                                <input type="text" id="description" name="description"><br>
+                                <label for="date">Date</label><br>
+                                <input type="text" id="date" name="date"><br>
+
+                                <button id="addTransaction" type="button">Submit</button>
+                                </form>
+                        </div>
+        
+
+                <h3>Delete a Transaction</h3>
 
                 <!--display the most recent transactions (last 20)-->
-                <h1>Recent Transactions</h1>
+                <h3>Recent Transactions</h3>
                 <table>
                 <tr>
                         <th>Type</th>
