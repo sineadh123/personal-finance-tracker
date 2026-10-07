@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="index.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <title>Personal Finance Tracker</title>
 </head>
 <body>
@@ -18,6 +19,7 @@
         <div class="main">
                         <button type="button" class="collapsible">Add a Transaction</button>
                         <div class="content">
+                                <!--Add a new transaction form below-->
                                 <form>
                                 <p>Select transaction type:</p>
                                 <input type="radio" id="income" name="typeOfTransaction" value="Income">
@@ -27,22 +29,41 @@
 
                                 <label for="amount">Amount</label><br>
                                 <input type="text" id="amount" name="amount"><br>
+
+                                <!--Category restricted autofill-->
                                 <label for="category">Category</label><br>
-                                <input type="text" id="category" name="category"><br>
+                                <input style="display:none;" type="text" id="income-cat" name="category" list="income-categories"><br>
+                                <datalist id="income-categories">
+                                        <option>Salary</option>
+                                        <option>Freelance</option>
+                                        <option>Gift</option>
+                                        <option>Investment</option>
+                                        <option>Other</option>
+                                </datalist>
+                                <input style="display:none;" type="text" id="expense-cat" name="category" list="expense-categories"><br>
+                                <datalist id="expense-categories">
+                                        <option>Food</option>
+                                        <option>Transport</option>
+                                        <option>Shopping</option>
+                                        <option>Bills</option>
+                                        <option>Entertainment</option>
+                                        <option>Health</option>
+                                        <option>Education</option>
+                                        <option>Other</option>
+                                </datalist>
+
                                 <label for="description">Description</label><br>
                                 <input type="text" id="description" name="description"><br>
                                 <label for="date">Date</label><br>
-                                <input type="text" id="date" name="date"><br>
+                                <input type="text" id="date" name="date"><br><br>
 
                                 <button id="addTransaction" type="button">Submit</button>
                                 </form>
                         </div>
         
 
-                <h3>Delete a Transaction</h3>
-
-                <!--display the most recent transactions (last 20)-->
-                <h3>Recent Transactions</h3>
+                <!--display ALL transactions-->
+                <h3>All Transactions</h3>
                 <table>
                 <tr>
                         <th>Type</th>

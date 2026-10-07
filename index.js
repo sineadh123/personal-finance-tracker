@@ -76,6 +76,19 @@ for (i = 0; i < coll.length; i++) {
 
 document.getElementById("addTransaction").addEventListener("click", addTransactions);
 
+//the code below allows us to filter between income and expense categories for autofill purposes
+$(document).ready(function () {
+
+        $("#income").click(function () {
+            $("#income-cat").show();
+            $("#expense-cat").hide();
+        });
+        $("#expense").click(function () {
+            $("#expense-cat").show();
+            $("#income-cat").hide();
+        });
+   });
+
 
 function loadTransactions(){
     const transactions = JSON.parse(localStorage.getItem("transactions")) || [];
@@ -83,15 +96,8 @@ function loadTransactions(){
 
 function addTransactions(){
     console.log("Hello world!");
-    const transactions = [{
-        type: "expense",
-        amount: 25,
-        category: "Food",
-        description: "Lunch",
-        date: "03/09"
-    }]
-    localStorage.setItem("transactions", JSON.stringify(transactions));
-    console.log(transactions);
+    const amount = document.getElementById("amount").value;
+    console.log(amount);
 }
 
 function deleteTransaction(){
