@@ -1,5 +1,11 @@
+
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 .sidenav {
@@ -81,4 +87,17 @@ th {
   display: none;
   overflow: hidden;
   background-color: #f1f1f1;
+}
+
+/*container for dashboard page*/
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 25px;
+}
+.container div {
+  background-color: #f1f1f1;
+  padding: 25px;
+  font-size: 27px;
+  text-align: left;
 }
